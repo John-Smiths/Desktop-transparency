@@ -6,7 +6,7 @@ This Python script is used to change the suffix of a file in a specified directo
 
 ## How to use
 
-1. Run this script in the Windows environment where the file you want to operate is located.
+1. Run this script in the Windows environment where the file you want to manipulate is located (run in administrator mode).
 2. When you run the script, it will prompt you to enter the file suffix you want to make transparent. For example, you can type '.lnk 'to make all shortcut suffixes transparent, or enter nothing to apply to a folder.
 3. After the input is complete, the script traverses the current directory and renames all files that match the specified suffix.
 4. Add a transparent character before the suffix of the modified file name. Each iteration of this character will increase one character to ensure the uniqueness of the file name.
