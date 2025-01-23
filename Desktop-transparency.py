@@ -1,17 +1,32 @@
-from os import system, listdir, path, rename, getcwd
+from os import system, listdir, path, rename, getcwd, chdir
 
 
-def main(suffix):
+def main(suffix, repath=None):
+    if repath:
+        chdir(repath)
     str_data = ' '  # 此处不是空格而是透明字符, 对Win 生效, Linux 没有尝试过.
     file_list = listdir()
+
+    print(f'工作路径{getcwd()}')
 
     for i in file_list:
         file_name, file_suffix = path.splitext(i)
         if file_suffix == suffix:
             src = path.join(getcwd(), i)
-            rename(src=path.join(getcwd(), i), dst=path.join(getcwd(), f'{str_data}{file_suffix}'))
-            str_data += ' '
+            while True:
+                try:
+                    rename(src=path.join(getcwd(), i), dst=path.join(getcwd(), f'{str_data}{file_suffix}'))
+                    break
+                except FileExistsError:
+                    str_data += ' '
             print(f'{path.join(getcwd(), i)} -->[ {file_suffix}]')
+
+    if repath:
+        return True
+    else:
+        return main(suffix, "..\..\Public\Desktop")
+
+
 
 
 if __name__ == '__main__':
