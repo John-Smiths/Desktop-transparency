@@ -19,7 +19,8 @@ Please note: This script has been tested under Windows and has not been verified
 - ** Permission issues ** : If the file is in a location that requires administrator permission to modify, make sure to run the script as administrator.
 - ** File Recovery ** : Once a file has been renamed, restoring the original name may require manual action, or writing another script to reverse the change.
 - ** Transparent character ** : The transparent character used (' ') is a special space character that may behave differently in different operating systems and applications.
+- ** Restart the computer ** : Restart the computer or terminate the window manager to refresh the desktop resources if it does not take effect.
 
-* Last updated: January 15, 2025 *
+* Last updated: January 23, 2025 *
 
 ---
